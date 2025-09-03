@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: java-springboot-sdaqnamn-gitops
+  description: This is GitOps manifest for java-springboot-sdaqnamn   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=java-springboot-sdaqnamn
+    backstage.io/kubernetes-id: java-springboot-sdaqnamn 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: xjiangorg/java-springboot-sdaqnamn-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:java-springboot-sdaqnamn
